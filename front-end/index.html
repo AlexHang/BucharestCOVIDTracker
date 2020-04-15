@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+		width:100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+		background-color: #252525;
+      }
+	  .logo{
+		height:100px;
+	  }
+	  
+    </style>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body>
+	<div class="container-fluid" style="height:100%;">
+		<div class="row" style="height:100%;">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="height:100%;">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="https://upb.ro/wp-content/uploads/2018/10/upb_logo_200ani_v1-289x300.png" class="logo" alt="" />
+					</div>
+					<div class="col-md-8">
+						<h1 style="margin-top:20px; color:white;">UPB COVID-19 Tracker</h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="height:100%;">
+				<div id="map"></div>
+			</div>
+		</div>
+	</div>
+    
+	
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyadi1l6HNYnd5MmK9s8r7ScfLC4FBoSA&callback=initMap"
+    async defer></script>
+	
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 44.4285786, lng: 26.1178693},
+          zoom: 12,
+		  styles:[
+			  {
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#212121"
+				  }
+				]
+			  },
+			  {
+				"elementType": "labels.icon",
+				"stylers": [
+				  {
+					"visibility": "off"
+				  }
+				]
+			  },
+			  {
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#757575"
+				  }
+				]
+			  },
+			  {
+				"elementType": "labels.text.stroke",
+				"stylers": [
+				  {
+					"color": "#212121"
+				  }
+				]
+			  },
+			  {
+				"featureType": "administrative",
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#757575"
+				  }
+				]
+			  },
+			  {
+				"featureType": "administrative.country",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#9e9e9e"
+				  }
+				]
+			  },
+			  {
+				"featureType": "administrative.land_parcel",
+				"stylers": [
+				  {
+					"visibility": "off"
+				  }
+				]
+			  },
+			  {
+				"featureType": "administrative.locality",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#bdbdbd"
+				  }
+				]
+			  },
+			  {
+				"featureType": "poi",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#757575"
+				  }
+				]
+			  },
+			  {
+				"featureType": "poi.park",
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#181818"
+				  }
+				]
+			  },
+			  {
+				"featureType": "poi.park",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#616161"
+				  }
+				]
+			  },
+			  {
+				"featureType": "poi.park",
+				"elementType": "labels.text.stroke",
+				"stylers": [
+				  {
+					"color": "#1b1b1b"
+				  }
+				]
+			  },
+			  {
+				"featureType": "road",
+				"elementType": "geometry.fill",
+				"stylers": [
+				  {
+					"color": "#2c2c2c"
+				  }
+				]
+			  },
+			  {
+				"featureType": "road",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#8a8a8a"
+				  }
+				]
+			  },
+			  {
+				"featureType": "road.arterial",
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#373737"
+				  }
+				]
+			  },
+			  {
+				"featureType": "road.highway",
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#3c3c3c"
+				  }
+				]
+			  },
+			  {
+				"featureType": "road.highway.controlled_access",
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#4e4e4e"
+				  }
+				]
+			  },
+			  {
+				"featureType": "road.local",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#616161"
+				  }
+				]
+			  },
+			  {
+				"featureType": "transit",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#757575"
+				  }
+				]
+			  },
+			  {
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [
+				  {
+					"color": "#000000"
+				  }
+				]
+			  },
+			  {
+				"featureType": "water",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				  {
+					"color": "#3d3d3d"
+				  }
+				]
+			  }
+			]
+        });
+		
+		$.get("https://api.opencagedata.com/geocode/v1/json?q=Sos+Oltenitei+140&key=89411cea9e284e869107fbf9ca4c57da", function(data, status){
+			console.log(data);
+			console.log(data["results"][0]["geometry"]);
+		});
+		
+		
+		var markers = [];
+		var markerCounter=0;
+		
+		var coordinates = [
+							{lat: 44.4285786, lng: 26.1178693},
+							{lat: 44.4315786, lng: 26.1278693},
+							{lat: 44.3969672, lng: 26.1123565}
+						];
+		
+		for(var i=0;i<coordinates.length;i++){
+			markers[i] = new google.maps.Marker({
+				position: coordinates[i],
+				title: 'Hello World!'
+			  });
+			markers[i].setMap(map);
+			 google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
+				return function() {
+					window.alert("hello"+i);
+				}
+			})(markers[i], i));
+		}
+		
+      }
+	  
+    </script>
+
+  </body>
+</html>
